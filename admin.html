@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/font_awesome.css"/>
+
 	<title>Budget Buddy Admin</title>
 </head>
 <body>
+	<div id="control_panel" class="container-fluid">
+		<div class="row">
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">+</button>
+			</div>
+		</div>
+	</div>
+
 	<div id="search_user">
 		<form action="#">
 			email: <input id="user_email" type="text"/><br />
@@ -18,8 +32,67 @@
 		</form>
 
 		<div id="run_query">Run</div>
+
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true"><i class="fa fa-times"></i></span>
+		        </button>
+		        <h4 class="modal-title" id="myModalLabel">Add New User</h4>
+		      </div>
+		      <div class="modal-body">
+					<form>
+						<div class="form-group row">
+							<label for="newUserFirstName" class="form-control-label col-sm-2">First Name</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="newUserFirstName" placeholder="John">
+							</div>
+
+							<label for="newUserSurname" class="form-control-label col-sm-2">Surname</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="newUserSurname" placeholder="Doe">
+							</div>
+						</div><!--/.form-group-->
+
+						<div class="form-group row">
+							<label for="newUserMiddleNames" class="form-control-label col-sm-2">Middle Names</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="newUserMiddleNames" placeholder="n/a">
+							</div>
+
+							<label for="newUserDOB" class="form-control-label col-sm-2">D.O.B</label>
+							<div class="col-sm-4">
+								<input type="date" class="form-control" id="newUserDOB">
+							</div>
+						</div><!--/.form-group-->
+
+						<div class="form-group row">
+							<label for="newUserEmail" class="form-control-label col-sm-2">Email</label>
+							<div class="col-sm-10">
+								<input type="email" class="form-control" id="newUserEmail" placeholder="Email">
+							</div>
+						</div><!--/.form-group-->
+
+						<div class="form-group row">
+							<label for="newUserPwd" class="form-control-label col-sm-2">Password</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="newUserPwd" placeholder="Password">
+							</div>
+						</div><!--/.form-group-->
+					</form>
+		      </div><!--/.modal-body-->
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary"><i class="fa fa-floppy-o"></i></button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	</div>
 	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
 	<script src="js/admin.js"></script>
 </body>
 </html>
